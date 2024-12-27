@@ -26,6 +26,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: 切换到亮色模式
+  font:
+    code: JetBrains Mono
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -45,6 +47,21 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css
+  - css/fonts.css
+  - css/extra.css
+  - css/inst.css
 plugins:
   - search:
       lang: zh 
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      cache_safe: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: iso_datetime

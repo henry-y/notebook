@@ -1,0 +1,104 @@
+.md-typeset {
+    h1,
+    h2,
+    code,
+    .linenos {
+      font-weight: 600;
+    }
+  
+    h3 {
+      font-weight: 500;
+    }
+  
+    h5 {
+      font-size: 0.75rem;
+    }
+  
+    h6 {
+      font-size: 0.7rem;
+    }
+  
+    details,
+    .admonition {
+      font-size: 0.75rem;
+    }
+  
+    li > p:first-child {
+      font-weight: bold;
+    }
+  
+    li:has(p:first-child)::marker {
+      font-weight: bold;
+    }
+  }
+  
+  h1 {
+    counter-reset: h2;
+  }
+  h2 {
+    counter-reset: h3;
+  }
+  h3 {
+    counter-reset: h4;
+  }
+  h4 {
+    counter-reset: h5;
+  }
+  h5 {
+    counter-reset: h6;
+  }
+  h2:before {
+    counter-increment: h2;
+    content: counter(h2);
+    margin-right: 0.8rem;
+  }
+  h3:before {
+    counter-increment: h3;
+    content: counter(h2) '.' counter(h3);
+    margin-right: 0.8rem;
+  }
+  h4:before {
+    counter-increment: h4;
+    content: counter(h2) '.' counter(h3) '.' counter(h4);
+    margin-right: 0.8rem;
+  }
+  h5:before {
+    counter-increment: h5;
+    content: counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5);
+    margin-right: 0.8rem;
+  }
+  h6:before {
+    counter-increment: h6;
+    content: counter(h2) '.' counter(h3) '.' counter(h4) '.' counter(h5) '.'
+      counter(h6);
+    margin-right: 0.8rem;
+  }
+  
+  table.wikitable {
+    margin: 1em 1em 1em 0;
+    width: 100%;
+    font-size: 12.8px;
+    background-color: var(--md-default-bg-color--lighter);
+    border: 1px #aaa solid;
+    border-collapse: collapse;
+    color: var(--md-default-fg-color);
+  }
+  
+  .wikitable th,
+  .wikitable td {
+    border: 1px #aaa solid;
+    padding: 0.2em;
+  }
+  
+  .wikitable th {
+    background-color: var(--md-code-bg-color);
+    text-align: center;
+  }
+  
+  .wikitable caption {
+    font-weight: bold;
+  }
+  
+  [data-md-color-scheme='default'] .transparent-img {
+    filter: invert(1) hue-rotate(180deg);
+  }
