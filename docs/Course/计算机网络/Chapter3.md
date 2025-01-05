@@ -256,8 +256,6 @@ $TCP rate =\frac {cwnd}{RTT} bytes/sec$
 
 ![image-20241104001933797](img/image-20241104001933797.png)
 
-
-
 ![image-20241104002116206](img/image-20241104002116206.png)
 
 注意将ssthresh设置为cwnd的一半的条件是：**超时**导致的丢包重传出现。然后设置ssthresh之后，将cwnd设置为1，直接进入**慢启动**。

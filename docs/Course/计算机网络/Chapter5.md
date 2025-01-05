@@ -156,7 +156,9 @@ SDN通过北向API与上方的网络控制的程序交互，通过南向API与�
 
 ICMP：Internet控制报文协议，用于在IP主机、路由器之间传递控制消息。
 
-ping命令使用ICMP回显请求和回显应答报文。
+ping命令使用**ICMP回显请求和回显应答报文**。
+
+PING协议的基本功能是发送“回显请求”（Echo Request）消息到目标主机，然后等待目标主机回复一个“回显应答”（Echo Reply）。通过这个过程，PING可以检测两台主机之间的连通性，以及测量往返时间（RTT）。
 
 traceroute命令使用ICMP超时报文。
 
