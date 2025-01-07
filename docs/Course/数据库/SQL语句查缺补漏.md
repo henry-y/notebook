@@ -63,7 +63,26 @@ customer_name = '12345'
 - 如果是on delete restrict，在子表存在引用时，**禁止**删除
 
 
-外键和普通约束完整性的区别是：**外键要求被引用的键一定要是主码**，而普通约束完整性可以自定义，只要保持唯一性
+外键和普通引用完整性的区别是：**外键要求被引用的键一定要是主码**，而普通引用完整性可以自定义，只要保持唯一性
+
+比如下面示例中的两个外键约束，`student_id` 是 `STUDENTS` 表的主码，`course_id` 是 `COURSES` 表的主码，所以外键约束是正确的。
+
+```sql
+CREATE TABLE enrollments (
+    enrollment_id INT PRIMARY KEY,       -- 主键约束：唯一标识每条选课记录
+    student_id INT,                      -- 外键约束：引用 students 表
+    course_id INT,                       -- 外键约束：引用 courses 表
+    enrollment_date DATE NOT NULL,       -- 非空约束：选课日期不能为空
+    CONSTRAINT fk_student                -- 外键约束名称
+        FOREIGN KEY (student_id)         -- 外键列
+        REFERENCES students(student_id)  -- 引用 students 表的主键
+        ON DELETE CASCADE,               -- 级联删除
+    CONSTRAINT fk_course                 -- 外键约束名称
+        FOREIGN KEY (course_id)          -- 外键列
+        REFERENCES courses(course_id)    -- 引用 courses 表的主键
+        ON DELETE CASCADE                -- 级联删除
+);
+```
 
 视图：
 
