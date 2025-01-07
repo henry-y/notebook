@@ -100,11 +100,16 @@ CREATE INDEX index_name on 关系(属性);
 
 - 授权
 
+```sql
+GRANT privilege_type [(column_list)] 
+ON object_name 
+TO user_or_role [, user_or_role ...]
+[WITH GRANT OPTION];
+
+GRANT SELECT ON employees TO 'user5'@'localhost' WITH GRANT OPTION;
 ```
-grant xxx
-on 关系/视图
-to 用户/角色列表
-```
+
+with grant option表示授权用户可以再授权给其他用户。
 
 对应的有rovoke
 
@@ -113,14 +118,14 @@ to 用户/角色列表
 语法：
 
 ```sql
-create trigger trigger_name before/after/instead of update xxx of TABLE
-referencing new row as nrow
-referencing old row as orow
-for each row
-when xxx
-begin 
-...
-end
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER | INSTEAD OF} {INSERT | UPDATE | DELETE}
+ON table_name
+[FOR EACH ROW | FOR EACH STATEMENT]
+[WHEN (condition)]
+BEGIN
+    -- 触发器逻辑
+END;
 ```
 
 注意`instead of`操作比较特殊，在事件发生前执行，并替代原始操作。
