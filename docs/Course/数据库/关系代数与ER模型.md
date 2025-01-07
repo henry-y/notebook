@@ -403,11 +403,11 @@ $A \in \beta$ 且函数依赖集 $(F-\{\alpha\to\beta\})\cup\{\alpha \to(\beta-A
 
 对于$r(R)$的任意两个元组$t_1$和$t_2$，如果$t_1[\alpha]=t_2[\alpha]$，则存在$r(R)$中的元组$t_3$和$t_4$，使得$t_1[R-\alpha-\beta]=t_3[R-\alpha-\beta]$，$t_2[\text{R}-\alpha-\beta]=t_4[\text{R}-\alpha-\beta]$，并且$t_3[\alpha\beta]=t_2[\alpha\beta]$，$t_4[\alpha\beta]=t_1[\alpha\beta]$。
 
-这个定义的意思是$\alpha$和$\beta$的联系独立于$\alpha$和$\R-\alpha-\beta$的联系。
+这个定义的意思是$\alpha$和$\beta$的联系独立于$\alpha$和$\text{R}-\alpha-\beta$的联系。
 
 函数依赖要求当$A\to B$存在时，不能有其他元组A的值和B的值不同。多值依赖反其道而行之，不对此进行要求，而是要求必须有对应特殊形式的元组存在。因此有时候函数依赖被称为 相等产生依赖 ，而多值依赖被称为 元组产生依赖。
 
-一个性质：$\alpha\to\to\beta$等价于$\alpha\to\to\R-\alpha-\beta$。
+一个性质：$\alpha\to\to\beta$等价于$\alpha\to\to\text{R}-\alpha-\beta$。
 
 另一个性质：若$\alpha\to \beta$ 则$\alpha\to\to\beta$。
 
